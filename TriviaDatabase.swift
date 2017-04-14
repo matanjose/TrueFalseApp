@@ -17,6 +17,21 @@ struct Question {
     let falseAnswer1: String
     let falseAnswer2: String
     let falseAnswer3: String
+    
+    
+    
+    /// correct answer location randomizer
+    func shuffle() -> [String] {
+        var unshuffledAnswers : [String] = [correctAnswer, falseAnswer1, falseAnswer2, falseAnswer3]
+        var shuffledAnswers : [String] = ["\(prompt)"]
+        
+        for answer in unshuffledAnswers {
+            let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: unshuffledAnswers.count)
+            shuffledAnswers.append("\(unshuffledAnswers[randomNumber])")
+            unshuffledAnswers.remove(at: randomNumber)
+        }
+        return shuffledAnswers
+    }
 }
 
 //Creating questions
@@ -35,7 +50,10 @@ let esperanto = Question(prompt: "Esperanto was designed...", correctAnswer: "in
 
 let masterTriviaDatabase: [Question] = [adjectiveOrder, piraha, signLanguage, cherokee, spain, esperanto]
 
-// randomizer
+
+
+
+// Question order randomizer
 
 struct RandomDatabase {
     let database: [Question]
