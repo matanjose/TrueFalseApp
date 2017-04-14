@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var questionField: UILabel!
     @IBOutlet weak var answer1Button: UIButton!
     @IBOutlet weak var Answer2Button: UIButton!
-    @IBOutlet weak var Answer3: UIButton!
+    @IBOutlet weak var Answer3Button: UIButton!
     @IBOutlet weak var Answer4Button: UIButton!
     @IBOutlet weak var playAgainButton: UIButton!
     

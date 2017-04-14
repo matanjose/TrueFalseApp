@@ -119,8 +119,8 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="Answer2Button" destination="mFg-3O-2ze" id="LJt-pm-05l"/>
-                        <outlet property="Answer3" destination="3yM-dW-DTk" id="2ht-hO-K3r"/>
-                        <outlet property="Answer4Button" destination="cGq-K2-J0Y" id="ATp-QA-o3u"/>
+                        <outlet property="Answer3Button" destination="3yM-dW-DTk" id="G6z-hx-ODc"/>
+                        <outlet property="Answer4Button" destination="cGq-K2-J0Y" id="Cmn-3u-I9d"/>
                         <outlet property="answer1Button" destination="Nlh-n2-ktp" id="MQR-MJ-br5"/>
                         <outlet property="playAgainButton" destination="K17-uy-MvB" id="0Bx-Cm-ye0"/>
                         <outlet property="questionField" destination="I3V-ih-1Ky" id="7UI-o2-ATi"/>
@@ -134,6 +134,10 @@
         <scene sceneID="WZK-5Y-LO3">
             <objects>
                 <viewController id="Gzk-4K-1EG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="faY-Zs-ASa"/>
+                        <viewControllerLayoutGuide type="bottom" id="eOM-Ji-rco"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9qQ-OJ-ymj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,6 +151,10 @@
         <scene sceneID="6S5-Ou-oOm">
             <objects>
                 <viewController id="ErB-qA-yuD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NxJ-BW-Lah"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wat-Uo-89s"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uL0-3z-izG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,6 +168,10 @@
         <scene sceneID="3w4-hk-Dds">
             <objects>
                 <viewController id="fEg-sl-UIl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p40-Ul-f9R"/>
+                        <viewControllerLayoutGuide type="bottom" id="grR-G6-raX"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0xL-dO-RUk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
