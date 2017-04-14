@@ -12,8 +12,6 @@ import GameKit
 import AudioToolbox
 
 class ViewController: UIViewController {
-    
-    var trivia = randomizedDatabase
     var questionsPerRound = trivia.count
     var questionsAsked = 0
     var correctQuestions = 0
@@ -100,7 +98,9 @@ class ViewController: UIViewController {
         
         questionsAsked = 0
         correctQuestions = 0
+        trivia = triviaMaster
         nextRound()
+        
     }
     
 

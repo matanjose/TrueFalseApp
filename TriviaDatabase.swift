@@ -56,6 +56,8 @@ struct RandomDatabase {
     }
 }
 
-var randomizedDatabase = RandomDatabase(database: masterTriviaDatabase).generator()
+let triviaMaster = RandomDatabase(database: masterTriviaDatabase).generator()
+var trivia = triviaMaster
+
 
 
