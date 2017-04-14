@@ -39,14 +39,14 @@ let masterTriviaDatabase: [Question] = [adjectiveOrder, piraha, signLanguage, ch
 
 struct RandomDatabase {
     let database: [Question]
+    
+    ///Generates random number to use as index
+    ///for taking items from masterTriviaDatabase
+    ///in a random order, which then becomes new order
+    ///for newly generated randomizedDatabase
     func generator() -> [Question] {
         var initialDatabase = database
         var randomizedDatabase: [Question] = []
-        
-        ///Generates random number to use as index
-        ///for taking items from masterTriviaDatabase
-        ///in a random order, which then becomes new order
-        ///for newly generated randomizedDatabase
         for question in initialDatabase {
             let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: initialDatabase.count)
             randomizedDatabase.append(initialDatabase[randomNumber])
