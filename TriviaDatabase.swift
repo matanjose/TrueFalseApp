@@ -35,16 +35,18 @@ let esperanto = Question(prompt: "Esperanto was designed...", correctAnswer: "in
 
 let masterTriviaDatabase: [Question] = [adjectiveOrder, piraha, signLanguage, cherokee, spain, esperanto]
 
-// randomizer 
+// randomizer
 
 struct RandomDatabase {
-    var initialDatabase: [Question]
-    var randomizedDatabase: [Question] = []
-    // var maxBound = initialDatabase.count
-    
-    mutating func generator(_ database: [Question]) -> [Question] {
+    let database: [Question]
+    func generator() -> [Question] {
         var initialDatabase = database
+        var randomizedDatabase: [Question] = []
         
+        ///Generates random number to use as index
+        ///for taking items from masterTriviaDatabase
+        ///in a random order, which then becomes new order
+        ///for newly generated randomizedDatabase
         for question in initialDatabase {
             let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: initialDatabase.count)
             randomizedDatabase.append(initialDatabase[randomNumber])
@@ -54,7 +56,6 @@ struct RandomDatabase {
     }
 }
 
-var randomizedDatabase = RandomDatabase.generator
-
+var randomizedDatabase = RandomDatabase(database: masterTriviaDatabase).generator()
 
 
