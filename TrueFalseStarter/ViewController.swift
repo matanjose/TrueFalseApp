@@ -13,7 +13,7 @@ import AudioToolbox
 
 class ViewController: UIViewController {
     
-    let trivia = randomizedDatabase
+    var trivia = randomizedDatabase
     var questionsPerRound = trivia.count
     var questionsAsked = 0
     var correctQuestions = 0
@@ -66,16 +66,18 @@ class ViewController: UIViewController {
         // Increment the questions asked counter
         questionsAsked += 1
         
-        let selectedQuestionDict = trivia[indexOfSelectedQuestion]
-        let correctAnswer = selectedQuestionDict["Answer"]
         
-        if (sender === trueButton &&  correctAnswer == "True") || (sender === falseButton && correctAnswer == "False") {
+        let selectedAnswer = "\(String(describing: sender.currentTitle))"
+        let correctAnswer = "\(trivia[0].correctAnswer)"
+        
+        if (selectedAnswer == correctAnswer) {
             correctQuestions += 1
             questionField.text = "Correct!"
         } else {
             questionField.text = "Sorry, wrong answer!"
         }
         
+        trivia.remove(at: 0)
         loadNextRoundWithDelay(seconds: 2)
     }
     
@@ -91,8 +93,10 @@ class ViewController: UIViewController {
     
     @IBAction func playAgain() {
         // Show the answer buttons
-        trueButton.isHidden = false
-        falseButton.isHidden = false
+        answer1Button.isHidden = false
+        Answer2Button.isHidden = false
+        Answer3Button.isHidden = false
+        Answer4Button.isHidden = false
         
         questionsAsked = 0
         correctQuestions = 0
