@@ -50,8 +50,10 @@ class ViewController: UIViewController {
     
     func displayScore() {
         // Hide the answer buttons
-        trueButton.isHidden = true
-        falseButton.isHidden = true
+        answer1Button.isHidden = true
+        Answer2Button.isHidden = true
+        Answer3Button.isHidden = true
+        Answer4Button.isHidden = true
         
         // Display play again button
         playAgainButton.isHidden = false
