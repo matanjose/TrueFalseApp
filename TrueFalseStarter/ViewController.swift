@@ -43,9 +43,8 @@ class ViewController: UIViewController {
     }
     
     func displayQuestion() {
-        indexOfSelectedQuestion = GKRandomSource.sharedRandom().nextInt(upperBound: trivia.count)
-        let questionDictionary = trivia[indexOfSelectedQuestion]
-        questionField.text = questionDictionary["Question"]
+        let question = trivia[0]
+        questionField.text = question.prompt
         playAgainButton.isHidden = true
     }
     
