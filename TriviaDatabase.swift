@@ -23,7 +23,7 @@ struct Question {
     /// correct answer location randomizer
     func shuffle() -> [String] {
         var unshuffledAnswers : [String] = [correctAnswer, falseAnswer1, falseAnswer2, falseAnswer3]
-        var shuffledAnswers : [String] = ["\(prompt)"]
+        var shuffledAnswers : [String] = []
         
         for answer in unshuffledAnswers {
             let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: unshuffledAnswers.count)
@@ -62,12 +62,14 @@ struct RandomDatabase {
     ///for taking items from masterTriviaDatabase
     ///in a random order, which then becomes new order
     ///for newly generated randomizedDatabase
-    func generator() -> [Question] {
+    func generator() -> [[String]] {
         var initialDatabase = database
-        var randomizedDatabase: [Question] = []
+        var randomizedQuestionsAnswers: [[String]] = ["\(prompt)", "\(correctAnswer)"]
         for question in initialDatabase {
             let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: initialDatabase.count)
-            randomizedDatabase.append(initialDatabase[randomNumber])
+            let randomIndex = initialDatabase[randomNumber]
+            
+            randomizedQuestionsAnswers.append(randomIndex.shuffle())
             initialDatabase.remove(at: randomNumber)
         }
         return randomizedDatabase

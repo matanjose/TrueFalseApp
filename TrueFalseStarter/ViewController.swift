@@ -42,8 +42,12 @@ class ViewController: UIViewController {
     
     func displayQuestion() {
         let question = trivia[0]
-        questionField.text = question.prompt
+        questionField.text = question[0]
         playAgainButton.isHidden = true
+        answer1Button.titleLabel?.text = question[1]
+        Answer2Button.titleLabel?.text = question[2]
+        Answer3Button.titleLabel?.text = question[3]
+        Answer4Button.titleLabel?.text = question[4]
     }
     
     func displayScore() {
