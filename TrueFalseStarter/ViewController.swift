@@ -13,20 +13,15 @@ import AudioToolbox
 
 class ViewController: UIViewController {
     
-    let questionsPerRound = 4
+    let questionsPerRound = masterTriviaDatabase.count
     var questionsAsked = 0
     var correctQuestions = 0
     var indexOfSelectedQuestion: Int = 0
     
     var gameSound: SystemSoundID = 0
     
-    let trivia: [[String : String]] = [
-        ["Question": "Only female koalas can whistle", "Answer": "False"],
-        ["Question": "Blue whales are technically whales", "Answer": "True"],
-        ["Question": "Camels are cannibalistic", "Answer": "False"],
-        ["Question": "All ducks are birds", "Answer": "True"]
-    ]
-    
+    let trivia: [Question] = randomizedDatabase
+   
     @IBOutlet weak var questionField: UILabel!
     @IBOutlet weak var answer1Button: UIButton!
     @IBOutlet weak var Answer2Button: UIButton!
@@ -48,17 +43,24 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func displayQuestion() {
-        indexOfSelectedQuestion = GKRandomSource.sharedRandom().nextInt(upperBound: trivia.count)
-        let questionDictionary = trivia[indexOfSelectedQuestion]
-        questionField.text = questionDictionary["Question"]
-        playAgainButton.isHidden = true
-    }
     
+        func displayQuestion() {
+            //Display prompt in question field
+           let questionToDisplay = randomizedDatabase[0]
+            questionField.text = questionToDisplay.prompt//
+        playAgainButton.isHidden = true
+            
+            //Display answers on buttons, in randomized order
+            let answersArray
+            
+    }
+ 
     func displayScore() {
         // Hide the answer buttons
-        trueButton.isHidden = true
-        falseButton.isHidden = true
+        answer1Button.isHidden = true
+        Answer2Button.isHidden = true
+        Answer3.isHidden = true
+        Answer4Button.isHidden = true
         
         // Display play again button
         playAgainButton.isHidden = false
@@ -70,16 +72,19 @@ class ViewController: UIViewController {
     @IBAction func checkAnswer(_ sender: UIButton) {
         // Increment the questions asked counter
         questionsAsked += 1
+        let selectedQuestion = randomizedDatabase[0]
+        let selectedQuestionDict = questionField.text
+        let correctAnswer = selectedQuestion.correctAnswer
         
-        let selectedQuestionDict = trivia[indexOfSelectedQuestion]
-        let correctAnswer = selectedQuestionDict["Answer"]
         
-        if (sender === trueButton &&  correctAnswer == "True") || (sender === falseButton && correctAnswer == "False") {
+        if (sender === answer1Button &&  correctAnswer == "True") || (sender === Answer2Button && correctAnswer == "False") {
             correctQuestions += 1
             questionField.text = "Correct!"
         } else {
             questionField.text = "Sorry, wrong answer!"
         }
+        
+        randomizedDatabase.remove(at: 0)
         
         loadNextRoundWithDelay(seconds: 2)
     }
@@ -96,8 +101,10 @@ class ViewController: UIViewController {
     
     @IBAction func playAgain() {
         // Show the answer buttons
-        trueButton.isHidden = false
-        falseButton.isHidden = false
+        answer1Button.isHidden = false
+        Answer2Button.isHidden = false
+        Answer3.isHidden = false
+        Answer4Button.isHidden = false
         
         questionsAsked = 0
         correctQuestions = 0

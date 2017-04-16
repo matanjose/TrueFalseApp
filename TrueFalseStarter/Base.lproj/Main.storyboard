@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--InitialViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrueFalseStarter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="InitialViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="TrueFalseStarter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -134,6 +134,10 @@
         <scene sceneID="WZK-5Y-LO3">
             <objects>
                 <viewController id="Gzk-4K-1EG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2k3-Ma-qmE"/>
+                        <viewControllerLayoutGuide type="bottom" id="iTH-S1-lEm"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9qQ-OJ-ymj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,6 +151,10 @@
         <scene sceneID="6S5-Ou-oOm">
             <objects>
                 <viewController id="ErB-qA-yuD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Laq-bK-zt7"/>
+                        <viewControllerLayoutGuide type="bottom" id="wVY-va-Xox"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uL0-3z-izG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,6 +168,10 @@
         <scene sceneID="3w4-hk-Dds">
             <objects>
                 <viewController id="fEg-sl-UIl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3zq-dQ-wEf"/>
+                        <viewControllerLayoutGuide type="bottom" id="R3c-1G-NtZ"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0xL-dO-RUk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
