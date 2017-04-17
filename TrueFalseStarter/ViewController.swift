@@ -73,7 +73,7 @@ class ViewController: UIViewController {
         // Increment the questions asked counter
         questionsAsked += 1
         let selectedQuestion = randomizedDatabase[0]
-        let selectedQuestionDict = questionField.text
+        let selectedAnswer = questionField.text
         let correctAnswer = selectedQuestion.correctAnswer
         
         

@@ -11,15 +11,9 @@
 
 import GameKit
 
-struct Question {
-    let prompt: String
-    let correctAnswer: String
-    let falseAnswer1: String
-    let falseAnswer2: String
-    let falseAnswer3: String
-}
 
-//Creating questions
+
+//questions
 
 let adjectiveOrder = Question(prompt: "What is the correct order for a string of adjectives before a given noun?", correctAnswer: "Opinion, size, age, shape, color, origin, material, purpose", falseAnswer1: "There is no required order", falseAnswer2: "Size, shape, origin, purpose, opinion, age, color, material", falseAnswer3: "Age, origin, opinion, shape, material, size, color, purpose")
 
@@ -35,27 +29,6 @@ let esperanto = Question(prompt: "Esperanto was designed...", correctAnswer: "in
 
 let masterTriviaDatabase: [Question] = [adjectiveOrder, piraha, signLanguage, cherokee, spain, esperanto]
 
-// randomizer
 
-struct RandomDatabase {
-    let database: [Question]
-    
-    ///Generates random number to use as index
-    ///for taking items from masterTriviaDatabase
-    ///in a random order, which then becomes new order
-    ///for newly generated randomizedDatabase
-    func generator() -> [Question] {
-        var initialDatabase = database
-        var randomizedDatabase: [Question] = []
-        for question in initialDatabase {
-            let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: initialDatabase.count)
-            randomizedDatabase.append(initialDatabase[randomNumber])
-            initialDatabase.remove(at: randomNumber)
-        }
-        return randomizedDatabase
-    }
-}
-
-var randomizedDatabase = RandomDatabase(database: masterTriviaDatabase).generator()
 
 
