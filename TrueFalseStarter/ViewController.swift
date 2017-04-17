@@ -20,7 +20,9 @@ class ViewController: UIViewController {
     
     var gameSound: SystemSoundID = 0
     
-    let testQuestion = randomTriviaDatabase[0]
+   
+    
+    
     
 
     
@@ -46,13 +48,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    let testQuestion = randomTriviaDatabase[0]
+    var promptArray = testQuestion.promptArray()
+    var answerArray = testQuestion.answersArray()
+    var questionPrompt = "\(promptArray[0])"
     
         func displayQuestion() {
             //Display prompt in question field
-            var promptArray = testQuestion.promptArray()
-            var answerArray = testQuestion.answersArray()
-            var questionPrompt = promptArray[0]
-            var correctAnswer = promptArray[1]
+          
+            
             
             questionField.text = questionPrompt
             
@@ -61,7 +65,7 @@ class ViewController: UIViewController {
             answer1Button.setTitle("\(randomAnswerArray[0])", for: UIControlState.normal)
             Answer2Button.setTitle("\(randomAnswerArray[1])", for: UIControlState.normal)
             Answer3.setTitle("\(randomAnswerArray[2])", for: UIControlState.normal)
-            Answer4Button.setTitle("\(randomAnswevarray[3])", for: UIControlState.normal)
+            Answer4Button.setTitle("\(randomAnswerArray[3])", for: UIControlState.normal)
             
         playAgainButton.isHidden = true
     }
@@ -83,10 +87,7 @@ class ViewController: UIViewController {
     @IBAction func checkAnswer(_ sender: UIButton) {
         // Increment the questions asked counter
         questionsAsked += 1
-        var promptArray = testQuestion.promptArray()
-        var answerArray = testQuestion.answersArray()
-        var questionPrompt = promptArray[0]
-        var correctAnswer = promptArray[1]
+        var correctAnswer = "\(promptArray[1])"
         let selectedAnswer = questionField.text
         
         if (sender === answer1Button &&  correctAnswer == questionField.text) ||
