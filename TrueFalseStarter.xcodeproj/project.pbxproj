@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		82482A031EA54E450066B6EB /* recurring functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82482A021EA54E450066B6EB /* recurring functions.swift */; };
+		82482A031EA54E450066B6EB /* recurringFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82482A021EA54E450066B6EB /* recurringFunctions.swift */; };
 		8297AC821EA115BD00140804 /* TriviaDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8297AC811EA115BD00140804 /* TriviaDatabase.swift */; };
 		8297AC861EA422FC00140804 /* RandomizationGenerators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8297AC851EA422FC00140804 /* RandomizationGenerators.swift */; };
 		97093D3C1C913506001275BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093D3B1C913506001275BC /* AppDelegate.swift */; };
@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		82482A021EA54E450066B6EB /* recurring functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "recurring functions.swift"; sourceTree = "<group>"; };
+		82482A021EA54E450066B6EB /* recurringFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recurringFunctions.swift; sourceTree = "<group>"; };
 		8297AC811EA115BD00140804 /* TriviaDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TriviaDatabase.swift; path = ../TriviaDatabase.swift; sourceTree = "<group>"; };
 		8297AC851EA422FC00140804 /* RandomizationGenerators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomizationGenerators.swift; sourceTree = "<group>"; };
 		97093D381C913506001275BC /* TrueFalseStarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueFalseStarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,7 +64,7 @@
 			children = (
 				97093D3B1C913506001275BC /* AppDelegate.swift */,
 				97093D3D1C913506001275BC /* ViewController.swift */,
-				82482A021EA54E450066B6EB /* recurring functions.swift */,
+				82482A021EA54E450066B6EB /* recurringFunctions.swift */,
 				8297AC811EA115BD00140804 /* TriviaDatabase.swift */,
 				8297AC851EA422FC00140804 /* RandomizationGenerators.swift */,
 				97093D3F1C913506001275BC /* Main.storyboard */,
@@ -150,7 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97093D3E1C913506001275BC /* ViewController.swift in Sources */,
-				82482A031EA54E450066B6EB /* recurring functions.swift in Sources */,
+				82482A031EA54E450066B6EB /* recurringFunctions.swift in Sources */,
 				8297AC861EA422FC00140804 /* RandomizationGenerators.swift in Sources */,
 				8297AC821EA115BD00140804 /* TriviaDatabase.swift in Sources */,
 				97093D3C1C913506001275BC /* AppDelegate.swift in Sources */,

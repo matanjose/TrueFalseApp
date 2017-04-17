@@ -20,7 +20,10 @@ class ViewController: UIViewController {
     
     var gameSound: SystemSoundID = 0
     
-    let trivia: [Question] = randomizedDatabase
+    let testQuestion = randomTriviaDatabase[0]
+    
+
+    
    
     @IBOutlet weak var questionField: UILabel!
     @IBOutlet weak var answer1Button: UIButton!
@@ -46,13 +49,21 @@ class ViewController: UIViewController {
     
         func displayQuestion() {
             //Display prompt in question field
-           let questionToDisplay = randomizedDatabase[0]
-            questionField.text = questionToDisplay.prompt//
-        playAgainButton.isHidden = true
+            var promptArray = testQuestion.promptArray()
+            var answerArray = testQuestion.answersArray()
+            var questionPrompt = promptArray[0]
+            var correctAnswer = promptArray[1]
+            
+            questionField.text = questionPrompt
             
             //Display answers on buttons, in randomized order
-            let answersArray
+            var randomAnswerArray = RandomDatabase(database: answerArray).generator()
+            answer1Button.setTitle("\(randomAnswerArray[0])", for: UIControlState.normal)
+            Answer2Button.setTitle("\(randomAnswerArray[1])", for: UIControlState.normal)
+            Answer3.setTitle("\(randomAnswerArray[2])", for: UIControlState.normal)
+            Answer4Button.setTitle("\(randomAnswevarray[3])", for: UIControlState.normal)
             
+        playAgainButton.isHidden = true
     }
  
     func displayScore() {
@@ -72,19 +83,24 @@ class ViewController: UIViewController {
     @IBAction func checkAnswer(_ sender: UIButton) {
         // Increment the questions asked counter
         questionsAsked += 1
-        let selectedQuestion = randomizedDatabase[0]
+        var promptArray = testQuestion.promptArray()
+        var answerArray = testQuestion.answersArray()
+        var questionPrompt = promptArray[0]
+        var correctAnswer = promptArray[1]
         let selectedAnswer = questionField.text
-        let correctAnswer = selectedQuestion.correctAnswer
         
-        
-        if (sender === answer1Button &&  correctAnswer == "True") || (sender === Answer2Button && correctAnswer == "False") {
+        if (sender === answer1Button &&  correctAnswer == questionField.text) ||
+            (sender === Answer2Button &&  correctAnswer == questionField.text) ||
+            (sender === Answer3 &&  correctAnswer == questionField.text) ||
+            (sender === Answer4Button &&  correctAnswer == questionField.text)
+        {
             correctQuestions += 1
             questionField.text = "Correct!"
         } else {
             questionField.text = "Sorry, wrong answer!"
         }
         
-        randomizedDatabase.remove(at: 0)
+        randomTriviaDatabase.remove(at: 0)
         
         loadNextRoundWithDelay(seconds: 2)
     }

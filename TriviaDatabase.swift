@@ -29,6 +29,8 @@ let esperanto = Question(prompt: "Esperanto was designed...", correctAnswer: "in
 
 let masterTriviaDatabase: [Question] = [adjectiveOrder, piraha, signLanguage, cherokee, spain, esperanto]
 
+var randomTriviaDatabase: [Question] = RandomDatabase(database: masterTriviaDatabase).generator() as! [Question]
+
 
 
 

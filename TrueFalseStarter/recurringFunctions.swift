@@ -18,6 +18,7 @@ struct RandomDatabase {
     func generator() -> [Any] {
         var initialDatabase = database
         var randomizedDatabase: [Any] = []
+        
         for question in initialDatabase {
             let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: initialDatabase.count)
             randomizedDatabase.append(initialDatabase[randomNumber])
@@ -25,8 +26,8 @@ struct RandomDatabase {
         }
         return randomizedDatabase
     }
-    
 }
+
 
 struct Question {
     let prompt: String
@@ -34,6 +35,11 @@ struct Question {
     let falseAnswer1: String
     let falseAnswer2: String
     let falseAnswer3: String
+    
+    func promptArray() -> [String] {
+        let promptArray = [prompt, correctAnswer]
+        return promptArray
+    }
     
     func answersArray() -> [String] {
         let answersArray = [correctAnswer, falseAnswer1, falseAnswer2, falseAnswer3]
